@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheDoxCode | Мошенники | Скрипты | Софты</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-color: #00ffaa;
+            --secondary-color: #0088cc;
+            --telegram-color: #2AABEE;
+            --bg-dark: #0e0e0e;
+            --bg-light: #1e1e1e;
+            --text-light: #ccc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark), var(--bg-light));
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            flex-direction: column;
+            animation: fadeIn 1.5s ease-out;
+            position: relative;
+        }
+
+        .parallax {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(0, 255, 170, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+            transition: background-position 0.1s ease-out;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 255, 170, 0.6);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1s ease-out;
+            margin: 20px 0;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-shadow: 0 0 15px rgba(0, 255, 170, 0.9);
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid var(--primary-color);
+            width: 0;
+            animation: typing 2s steps(20, end) forwards, blink 0.7s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--telegram-color);
+            color: white;
+            padding: 14px;
+            margin: 15px 0;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(42, 171, 238, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(42, 171, 238, 0.5);
+            border-color: white;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn i {
+            margin-right: 10px;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover i {
+            transform: scale(1.2);
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px;
+            transition: all 0.5s ease;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 255, 170, 0.8);
+            transition: all 0.4s ease;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            background-color: #1e1e1e;
+        }
+
+        .avatar-container:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .avatar-container:hover .avatar {
+            box-shadow: 0 0 40px rgba(0, 255, 170, 1);
+        }
+
+        p {
+            font-size: 15px;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 12px;
+            color: var(--text-light);
+            opacity: 0.7;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        .telegram-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="white" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.33 1.48-1.71 5.29-2.42 7.02-.18.44-.53.55-.86.33-.42-.28-1.28-.93-1.92-1.38-.34-.24-.68-.25-1.03-.06-.46.25-1.47.94-2.2 1.36-.19.11-.43.17-.66.17-.31 0-.62-.14-.81-.4-.28-.38-.19-.87.21-1.25l2.8-2.69c.22-.21.59-.65.59-.65s3.06-2.74 3.23-3.07c.17-.33.04-.5-.07-.58-.12-.09-.3-.11-.56.02-.33.16-6.45 4.08-6.45 4.08-.31.21-.61.31-.88.31-.34 0-.66-.15-.89-.43-.32-.4-.28-.96.1-1.29l7.7-7.01c.38-.34.98-.31 1.32.07.34.38.31.98-.07 1.32z"/></svg>') no-repeat center;
+            background-size: contain;
+            vertical-align: middle;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="parallax"></div>
+    <div class="container">
+        <div class="avatar-container">
+            <!-- ВСТАВЬТЕ ССЫЛКУ НА ВАШУ АВАТАРКУ -->
+            <img src="https://example.com/your-avatar.jpg" alt="TheDoxCode Avatar" class="avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%231e1e1e\'/><text x=\'50\' y=\'60\' font-family=\'Inter\' font-size=\'40\' fill=\'%2300ffaa\' text-anchor=\'middle\'>TDC</text></svg>'">
+        </div>
+        <h1>TheDoxCode</h1>
+        <p>Каналы и контакты для связи. Мошенники, скрипты, софты и личный канал.</p>
+        
+        <a href="https://t.me/+HKxMISFyc69iODk1" class="btn">
+            <i class="fab fa-telegram"></i>
+            Мошенники
+        </a>
+        
+        <a href="https://t.me/+I4FaamoeY2ZlZWNl" class="btn">
+            <i class="fab fa-telegram"></i>
+            Скрипты и софты
+        </a>
+        
+        <a href="https://t.me/TheDoxCode" class="btn">
+            <i class="fab fa-telegram"></i>
+            Мой канал
+        </a>
+        
+        <a href="https://t.me/TheDoxCode_BIO" class="btn">
+            <i class="fab fa-telegram"></i>
+            BIO
+        </a>
+        
+        <div class="footer">TheDoxCode © 2023 | Все права защищены</div>
+    </div>
+    
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            document.documentElement.style.setProperty('--x', `${e.clientX}px`);
+            document.documentElement.style.setProperty('--y', `${e.clientY}px`);
+        });
+
+        // Анимация кнопок при загрузке
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach((btn, index) => {
+                setTimeout(() => {
+                    btn.style.opacity = '1';
+                    btn.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+        });
+    </script>
+</body>
+</html>
